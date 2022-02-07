@@ -1,0 +1,2 @@
+My next goal is to create a Typing Test App. But it's a tricky one.
+Let's think about it. How can i display the text in the text field and constantly check for if the words
