@@ -4,6 +4,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+from tkinter.font import Font
 import os
 
 
@@ -28,9 +29,10 @@ class TypingTest(Tk):
         self.style = ttk.Style()
         self.style.theme_use("clam")
 
-        # test label
-        self.my_label = ttk.Label(self.global_frame, text="Typing Test App")
-        self.my_label.grid(column=1, row=1)
+        # title label
+        font_for_the_label = Font(family="Arial", size=36, weight="bold")
+        self.title_label = ttk.Label(self.global_frame, text="Typing Test App", font=font_for_the_label)
+        self.title_label.grid(column=1, row=1)
 
         # mainloop
         self.mainloop()
