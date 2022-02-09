@@ -1,0 +1,9 @@
+07.02.2022
+  My next goal is to create a Typing Test App. But it's a tricky one.
+  Let's think about it. How can i display the text in the text field and constantly check for the words.
+
+09.02.2022
+  Well, some time have passed. And I still have no idea how to do it. Let's think.
+
+
+
