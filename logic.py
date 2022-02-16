@@ -131,7 +131,8 @@ class TypingTest(Tk):
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
-        text_entry = ttk.Entry(mainframe, width=60)
+        font_for_the_entry = Font(family="Arial", size=14)
+        text_entry = ttk.Entry(mainframe, width=60, font=font_for_the_entry)
         text_entry.grid(column=0, row=1, padx=20, pady=20, columnspan=2)
 
         # labels
@@ -195,7 +196,8 @@ class TypingTest(Tk):
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
-        text_entry = ttk.Entry(mainframe, width=60)
+        font_for_the_entry = Font(family="Arial", size=14)
+        text_entry = ttk.Entry(mainframe, width=60, font=font_for_the_entry)
         text_entry.grid(column=0, row=1, padx=20, pady=20, columnspan=2)
 
         # labels
@@ -259,7 +261,8 @@ class TypingTest(Tk):
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
-        text_entry = ttk.Entry(mainframe, width=60)
+        font_for_the_entry = Font(family="Arial", size=14)
+        text_entry = ttk.Entry(mainframe, width=60, font=font_for_the_entry)
         text_entry.grid(column=0, row=1, padx=20, pady=20, columnspan=2)
 
         # labels
@@ -269,7 +272,8 @@ class TypingTest(Tk):
         rules_label.grid(column=0, row=2, padx=10, pady=10, columnspan=2)
 
         font_for_test_sentence_label = Font(family="Arial", size=14)
-        test_sentence_label = ttk.Label(mainframe, text="Sentence",
+        test_sentence_label = ttk.Label(mainframe,
+                                        text="ravins expansivity concurrently yahooisms wayside manurial tis",
                                         style="Labels.TLabel", font=font_for_test_sentence_label)
         test_sentence_label.grid(column=0, row=0, padx=10, pady=20, columnspan=2)
 
@@ -280,7 +284,7 @@ class TypingTest(Tk):
         """
         # check the index, to determine which type of the test will be taken
         if index == 0:
-           pass
+            pass
         elif index == 1:
             pass
         else:

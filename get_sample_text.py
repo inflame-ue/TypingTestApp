@@ -32,7 +32,7 @@ def write_data(data: list):
     :return: True if success, False if not
     """
     # create 30 random sentences from the random worda that we got
-    sentences = [" ".join(random.sample(data, 10)) for i in range(30)]
+    sentences = [" ".join(random.sample(data, 7)) for i in range(30)]
 
     # write them to a file
     with open("data/hard_mode.txt", "a") as file:
@@ -40,3 +40,4 @@ def write_data(data: list):
             file.write(f"{sentence}\n")
 
 
+write_data(get_data())
