@@ -122,10 +122,12 @@ class TypingTest(Tk):
         mainframe.grid(column=0, row=0)
 
         # buttons
-        start_button = ttk.Button(mainframe, text="Start", padding=1, command=self.start_test, style="Buttons.TButton")
+        start_button = ttk.Button(mainframe, text="Start", padding=1, command=lambda: self.start_test(index),
+                                  style="Buttons.TButton")
         start_button.grid(column=0, row=3, padx=10, pady=10)
 
-        exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=lambda: self.close_window(index), style="Buttons.TButton")
+        exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=lambda: self.close_window(index),
+                                 style="Buttons.TButton")
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
@@ -184,7 +186,8 @@ class TypingTest(Tk):
         mainframe.grid(column=0, row=0)
 
         # buttons
-        start_button = ttk.Button(mainframe, text="Start", padding=1, command=self.start_test, style="Buttons.TButton")
+        start_button = ttk.Button(mainframe, text="Start", padding=1, command=lambda: self.start_test(index),
+                                  style="Buttons.TButton")
         start_button.grid(column=0, row=3, padx=10, pady=10)
 
         exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=lambda: self.close_window(index),
@@ -247,7 +250,8 @@ class TypingTest(Tk):
         mainframe.grid(column=0, row=0)
 
         # buttons
-        start_button = ttk.Button(mainframe, text="Start", padding=1, command=self.start_test, style="Buttons.TButton")
+        start_button = ttk.Button(mainframe, text="Start", padding=1, command=lambda: self.start_test(index),
+                                  style="Buttons.TButton")
         start_button.grid(column=0, row=3, padx=10, pady=10)
 
         exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=lambda: self.close_window(index),
@@ -269,17 +273,23 @@ class TypingTest(Tk):
                                         style="Labels.TLabel", font=font_for_test_sentence_label)
         test_sentence_label.grid(column=0, row=0, padx=10, pady=20, columnspan=2)
 
-    def start_test(self):
+    def start_test(self, index):
         """
         This is the main function of the Typing Test App. Here will the test start and end.
         :return: nothing
         """
-        pass
+        # check the index, to determine which type of the test will be taken
+        if index == 0:
+           pass
+        elif index == 1:
+            pass
+        else:
+            pass
 
     def close_window(self, index):
         """
         This function closes the window.
-        :param index: index that will allow us to identify which needs to be closed
+        :parameter index: index that will allow us to identify which needs to be closed
         :return: nothing
         """
         # closing the window, that associates with the given index
@@ -297,4 +307,3 @@ class TypingTest(Tk):
 
         # returning the root window back to the screen
         self.deiconify()
-
