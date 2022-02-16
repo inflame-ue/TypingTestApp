@@ -84,6 +84,9 @@ class TypingTest(Tk):
         Opens in a new Tkinter window.
         :return: nothing
         """
+        # index variable for identifying the window
+        index = 0
+
         # hide the main window, till the TopLevel is not closed
         self.iconify()
         self.easy_button.configure(state=DISABLED)
@@ -122,7 +125,7 @@ class TypingTest(Tk):
         start_button = ttk.Button(mainframe, text="Start", padding=1, command=self.start_test, style="Buttons.TButton")
         start_button.grid(column=0, row=3, padx=10, pady=10)
 
-        exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=self.close_window, style="Buttons.TButton")
+        exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=lambda: self.close_window(index), style="Buttons.TButton")
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
@@ -146,6 +149,9 @@ class TypingTest(Tk):
         Opens in a new Tkinter Window.
         :return: nothing
         """
+        # index variable for identifying the window
+        index = 1
+
         # hide the main window, till the TopLevel is not closed
         self.iconify()
 
@@ -181,7 +187,8 @@ class TypingTest(Tk):
         start_button = ttk.Button(mainframe, text="Start", padding=1, command=self.start_test, style="Buttons.TButton")
         start_button.grid(column=0, row=3, padx=10, pady=10)
 
-        exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=self.close_window, style="Buttons.TButton")
+        exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=lambda: self.close_window(index),
+                                 style="Buttons.TButton")
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
@@ -205,6 +212,9 @@ class TypingTest(Tk):
         Opens in a new Tkinter Window.
         :return: nothing
         """
+        # index variable for identifying the window
+        index = 2
+
         # hide the main window, till the TopLevel is not closed
         self.iconify()
 
@@ -240,7 +250,8 @@ class TypingTest(Tk):
         start_button = ttk.Button(mainframe, text="Start", padding=1, command=self.start_test, style="Buttons.TButton")
         start_button.grid(column=0, row=3, padx=10, pady=10)
 
-        exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=self.close_window, style="Buttons.TButton")
+        exit_button = ttk.Button(mainframe, text="Exit", padding=1, command=lambda: self.close_window(index),
+                                 style="Buttons.TButton")
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
@@ -259,7 +270,31 @@ class TypingTest(Tk):
         test_sentence_label.grid(column=0, row=0, padx=10, pady=20, columnspan=2)
 
     def start_test(self):
+        """
+        This is the main function of the Typing Test App. Here will the test start and end.
+        :return: nothing
+        """
         pass
 
-    def close_window(self):
-        pass
+    def close_window(self, index):
+        """
+        This function closes the window.
+        :param index: index that will allow us to identify which needs to be closed
+        :return: nothing
+        """
+        # closing the window, that associates with the given index
+        if index == 0:
+            self.easy_window.destroy()
+        elif index == 1:
+            self.medium_window.destroy()
+        else:
+            self.hard_window.destroy()
+
+        # changing the state of the buttons back to normal
+        self.easy_button.configure(state=NORMAL)
+        self.medium_button.configure(state=NORMAL)
+        self.hard_button.configure(state=NORMAL)
+
+        # returning the root window back to the screen
+        self.deiconify()
+
