@@ -114,9 +114,6 @@ class TypingTest(Tk):
         label_style = ttk.Style()
         label_style.configure("Labels.TLabel", background="#F9ED69", foreground="#F08A5D")
 
-        entry_style = ttk.Style()
-        entry_style.configure("Entry.TEntry", background="#F9ED69", foreground="#F08A5D")
-
         # create a main frame for the window
         mainframe = ttk.Frame(self.easy_window, style="MainFrame.TFrame")
         mainframe.grid(column=0, row=0)
@@ -129,7 +126,7 @@ class TypingTest(Tk):
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
-        text_entry = ttk.Entry(mainframe, width=60, style="Entry.TEntry")
+        text_entry = ttk.Entry(mainframe, width=60)
         text_entry.grid(column=0, row=1, padx=20, pady=20, columnspan=2)
 
         # labels
@@ -163,21 +160,18 @@ class TypingTest(Tk):
         buttons_style = ttk.Style()
         buttons_style.theme_use("default")
         buttons_style.configure("Buttons.TButton",
-                                background="#F9ED69",
-                                foreground="#F08A5D",
+                                background="#222831",
+                                foreground="#00ADB5",
                                 font=font_for_the_buttons,
                                 width=10,
                                 borderwidth=1,
                                 focusthickness=3, )
 
         mainframe_style = ttk.Style()
-        mainframe_style.configure("MainFrame.TFrame", background="#F9ED69")
+        mainframe_style.configure("MainFrame.TFrame", background="#222831")
 
         label_style = ttk.Style()
-        label_style.configure("Labels.TLabel", background="#F9ED69", foreground="#F08A5D")
-
-        entry_style = ttk.Style()
-        entry_style.configure("Entry.TEntry", background="#F9ED69", foreground="#F08A5D")
+        label_style.configure("Labels.TLabel", background="#222831", foreground="#00ADB5")
 
         # create a main frame for the window
         mainframe = ttk.Frame(self.medium_window, style="MainFrame.TFrame")
@@ -191,7 +185,7 @@ class TypingTest(Tk):
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
-        text_entry = ttk.Entry(mainframe, width=60, style="Entry.TEntry")
+        text_entry = ttk.Entry(mainframe, width=60)
         text_entry.grid(column=0, row=1, padx=20, pady=20, columnspan=2)
 
         # labels
@@ -225,21 +219,18 @@ class TypingTest(Tk):
         buttons_style = ttk.Style()
         buttons_style.theme_use("default")
         buttons_style.configure("Buttons.TButton",
-                                background="#F9ED69",
-                                foreground="#F08A5D",
+                                background="#252A34",
+                                foreground="#FF2E63",
                                 font=font_for_the_buttons,
                                 width=10,
                                 borderwidth=1,
                                 focusthickness=3, )
 
         mainframe_style = ttk.Style()
-        mainframe_style.configure("MainFrame.TFrame", background="#F9ED69")
+        mainframe_style.configure("MainFrame.TFrame", background="#252A34")
 
         label_style = ttk.Style()
-        label_style.configure("Labels.TLabel", background="#F9ED69", foreground="#F08A5D")
-
-        entry_style = ttk.Style()
-        entry_style.configure("Entry.TEntry", background="#F9ED69", foreground="#F08A5D")
+        label_style.configure("Labels.TLabel", background="#252A34", foreground="#FF2E63")
 
         # create a main frame for the window
         mainframe = ttk.Frame(self.hard_window, style="MainFrame.TFrame")
@@ -253,7 +244,7 @@ class TypingTest(Tk):
         exit_button.grid(column=1, row=3, padx=10, pady=10)
 
         # entries
-        text_entry = ttk.Entry(mainframe, width=60, style="Entry.TEntry")
+        text_entry = ttk.Entry(mainframe, width=60)
         text_entry.grid(column=0, row=1, padx=20, pady=20, columnspan=2)
 
         # labels
