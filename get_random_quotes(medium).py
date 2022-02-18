@@ -5,7 +5,7 @@ import requests
 
 
 # function block
-def get_random_quotes():
+def get_random_quotes() -> list:
     """
     This function uses requests module to get random quotes from the API
     :return: json, which contains all quotes
@@ -25,11 +25,11 @@ def get_random_quotes():
     return data
 
 
-def write_data_to_medium_mode_txt(data):
+def write_data_to_medium_mode_txt(data: list) -> None:
     """
     This function takes data that we got from the random quotes API and writes it to medium_mode.txt
     :param data: random quotes that we got from the API call
-    :return: nothing
+    :return: None
     """
     # open file to write data into it
     with open("data/medium_mode.txt", "a", encoding="utf-8") as file:

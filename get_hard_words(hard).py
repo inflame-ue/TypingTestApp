@@ -25,11 +25,11 @@ def get_data():
     return response.json()
 
 
-def write_data(data: list):
+def write_data(data: list) -> None:
     """
     This function writes random words that we get from get_data function to the data/hard_mode.txt
     :param data: list of random words
-    :return: True if success, False if not
+    :return: None
     """
     # create 30 random sentences from the random worda that we got
     sentences = [" ".join(random.sample(data, 7)) for i in range(30)]
