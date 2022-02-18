@@ -22,7 +22,8 @@ def get_random_quotes():
     response.raise_for_status()
 
     # return data
-    return response.json()
+    data = [quote["content"] for quote in response.json()["results"]]
+    return data
 
 
 def write_data_to_medium_mode_txt(data):
@@ -31,4 +32,10 @@ def write_data_to_medium_mode_txt(data):
     :param data: random quotes that we got from the API call
     :return: nothing
     """
-    pass
+    # open file to write data into it
+    with open("data/medium_mode.txt", "a") as file:
+        for quote in data:
+            file.write(f"{quote}\n")
+
+
+write_data_to_medium_mode_txt(get_random_quotes())
