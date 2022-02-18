@@ -2,7 +2,6 @@
 
 # imports
 import requests
-import random
 
 
 # function block
@@ -33,9 +32,6 @@ def write_data_to_medium_mode_txt(data):
     :return: nothing
     """
     # open file to write data into it
-    with open("data/medium_mode.txt", "a") as file:
+    with open("data/medium_mode.txt", "a", encoding="utf-8") as file:
         for quote in data:
             file.write(f"{quote}\n")
-
-
-write_data_to_medium_mode_txt(get_random_quotes())
