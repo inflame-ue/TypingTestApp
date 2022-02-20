@@ -3,13 +3,8 @@
 # imports
 from tkinter import *
 from tkinter import ttk
-from tkinter import messagebox
 from tkinter.font import Font
-
-import keyboard
-from keyboard import is_pressed
 import time
-import os
 import random
 
 
@@ -317,6 +312,9 @@ class TypingTest(Tk):
         """
         # check the index, to determine which type of the test will be taken
         if index == 0:
+            # clear the text entry
+            self.easy_text_entry.delete(0, END)
+
             # get a random sentence from data/easy_mode.txt
             with open("data/easy_mode.txt", "r", encoding="utf-8") as hard_file:
                 # read the file
@@ -335,9 +333,13 @@ class TypingTest(Tk):
 
             # check if the Enter key was pressed, if it was than we need to calculate the results
             self.easy_window.bind("<Return>",
-                                  lambda sentence=random_sentence, id_index=index: self.display_results(sentence,
-                                                                                                        index))
+                                  lambda event, sentence=random_sentence, id_index=index: self.display_results(event,
+                                                                                                               sentence,
+                                                                                                               index))
         elif index == 1:
+            # clear the text entry
+            self.medium_text_entry.delete(0, END)
+
             # get a random sentence from data/easy_mode.txt
             with open("data/medium_mode.txt", "r", encoding="utf-8") as medium_file:
                 # read the file
@@ -356,9 +358,13 @@ class TypingTest(Tk):
 
             # check if the Enter key was pressed, if it was than we need to calculate the results
             self.medium_window.bind("<Return>",
-                                    lambda sentence=random_sentence, id_index=index: self.display_results(sentence,
-                                                                                                          index))
+                                    lambda event, sentence=random_sentence, id_index=index: self.display_results(event,
+                                                                                                                 sentence,
+                                                                                                                 index))
         else:
+            # clear the text entry
+            self.hard_text_entry.delete(0, END)
+
             # get a random sentence from data/easy_mode.txt
             with open("data/hard_mode.txt", "r", encoding="utf-8") as hard_file:
                 # read the file
@@ -377,10 +383,11 @@ class TypingTest(Tk):
 
             # check if the Enter key was pressed, if it was than we need to calculate the results
             self.hard_window.bind("<Return>",
-                                  lambda sentence=random_sentence, id_index=index: self.display_results(sentence,
-                                                                                                        index))
+                                  lambda event, sentence=random_sentence, id_index=index: self.display_results(event,
+                                                                                                               sentence,
+                                                                                                               index))
 
-    def display_results(self, sentence, index):
+    def display_results(self, event, sentence, index):
         """
         This method calculates all the results from the Typing Test.
         :param event: event that is passed from tkinter.bind(seq, func) method
@@ -391,9 +398,16 @@ class TypingTest(Tk):
         # calculate time
         self.total_time = time.time() - self.start_time
 
+        # get user input based on the window that is currently opened
+        if index == 0:
+            user_input = self.easy_text_entry.get()
+        elif index == 1:
+            user_input = self.medium_text_entry.get()
+        else:
+            user_input = self.hard_text_entry.get()
+
         # calculate accuracy
         count = 0
-        user_input = self.easy_text_entry.get()
         for i, char in enumerate(sentence):
             try:
                 if user_input[i] == char:
